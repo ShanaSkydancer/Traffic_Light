@@ -62,11 +62,39 @@ var redLight = new TrafficLight('light', 'red');
 var orangeLight = new TrafficLight('light', 'orange');
 var greenLight = new TrafficLight('light', 'green');
 
-redLight.stop();
-// redLight.blink();
+var onButt = document.querySelector('.onButt');
+var offButt = document.querySelector('.offButt');
+var stopButt = document.querySelector('.stopButt');
+var warningButt = document.querySelector('.warningButt');
+var goButt = document.querySelector('.goButt');
+var blinkButt = document.querySelector('.blinkButt');
 
-orangeLight.warning();
-// orangeLight.blink();
+onButt.addEventListener('click', () => {
+   redLight.on();
+   orangeLight.on();
+   greenLight.on();
+});
 
-greenLight.go();
-// greenLight.blink();
+offButt.addEventListener('click', () => {
+    redLight.off();
+    orangeLight.off();
+    greenLight.off();
+ });
+
+ stopButt.addEventListener('click', () => {
+    redLight.stop();
+ });
+
+ warningButt.addEventListener('click', () => {
+    orangeLight.warning();
+ });
+
+ goButt.addEventListener('click', () => {
+    greenLight.go();
+ });
+
+ blinkButt.addEventListener('click', () => {
+    redLight.blink();
+    orangeLight.blink();
+    greenLight.blink();
+ });
